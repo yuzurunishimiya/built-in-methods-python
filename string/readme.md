@@ -3,7 +3,7 @@
 ### Semua list methods pada string
 - [x] capitalize
 - [ ] casefold
-- [ ] center
+- [x] center
 - [ ] count
 - [ ] encode
 - [ ] endswith
@@ -142,5 +142,5 @@
     ```
    ***Output:***
     ```text
-    Centered string: ~~~python itu istimewa~~~~'
+    Centered string: ~~~python itu istimewa~~~~
     ```
