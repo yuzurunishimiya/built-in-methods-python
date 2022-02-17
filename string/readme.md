@@ -67,30 +67,30 @@
 
   
 - Contoh:
-    1. Capitalize sebuah kalimat
-        ##### Input:
-        ```python
-        string = "python sangat bagus"
-        capialize_string = string.capitalize()
-        print("Original string: ", string)
-        print("Capitalized string: ", capialize_string)
-        ```
-       ##### Output:
-        ```text
-       Original string: pyton sangat bagus
-       Capitalize string: Python sangat bagus
-        ```
-       
-    2. Karakter pertama yang bukan alphabetic:
-        ##### Input:
-        ```python
-        string = "% adalah operator modulus"
-        capialize_string = string.capitalize()
-        print("Original string: ", string)
-        print("Capitalized string: ", capialize_string)
-        ```
-        ##### Output:
-        ```text
-        Original string: % adalah operator modulus
-        Capitalize string: % adalah operator modulus
-        ```
+1. Capitalize sebuah kalimat
+    ##### Input:
+    ```python
+    string = "python sangat bagus"
+    capialize_string = string.capitalize()
+    print("Original string: ", string)
+    print("Capitalized string: ", capialize_string)
+    ```
+   ##### Output:
+    ```text
+   Original string: pyton sangat bagus
+   Capitalize string: Python sangat bagus
+    ```
+   
+2. Karakter pertama yang bukan alphabetic:
+    ##### Input:
+    ```python
+    string = "% adalah operator modulus"
+    capialize_string = string.capitalize()
+    print("Original string: ", string)
+    print("Capitalized string: ", capialize_string)
+    ```
+    ##### Output:
+    ```text
+    Original string: % adalah operator modulus
+    Capitalize string: % adalah operator modulus
+    ```
