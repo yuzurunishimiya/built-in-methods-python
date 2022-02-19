@@ -5,7 +5,7 @@
 - [ ] casefold
 - [x] center
 - [x] count
-- [ ] encode
+- [x] encode
 - [ ] endswith
 - [ ] expandtabs
 - [ ] find
@@ -145,7 +145,7 @@
     Centered string: ~~~python itu istimewa~~~~
     ```
 
-**4. Count**
+**4. count**
 
 - Definisi
 > `count` method ini mengembalikan jumlah kemunculan substring
@@ -206,3 +206,89 @@
     ```text
     Jumlah huruf u: 1
     ```
+
+**5. encode**
+
+- Definisi
+
+> `encode` method mengembalikan encoded version dari string yang diberikan
+
+- Syntax
+
+    ```python
+    string.encode(encoding='UTF-8', errors='strict')
+    ```
+
+- Parameters
+
+    Secara default, method `encode()` tidak memerlukan parameter apapun.\
+    Method ini akan mengembalikan sebuah versi `utf-8` dari string. Jika ada kegagalan,\
+    method ini membangkitkan sebuah `UnicodeDecodeError` exception.
+
+    Akan tetapi method ini bisa menggunakan dua parameter:
+    * **encoding** - tipe pengkodean `(encoding)` yang mana string akan dikonversikan
+    * **errors** - respon ketika pengkodean gagal. Ada 6 tipe dari respon error
+        - strict - respon bawaan yang akan mengangkat sebuah `UnicodeDecodeError` exception ketika error
+        - ignore - mengabaikan unicode yang tidak dapat dikodekan dari hasilnya
+        - replace - mengganti unicode yang tidak dapat dikodekan menjadi tanda tanya **?**
+        - xmlcharrefreplace - memasukkan XML karakter alih-alih unicode yang tidak dapat dikodekan
+        - backslashreplace - memasukkan `\uNNNN` escape sequence alih-alih unicode yang tidak dapat dikodekan
+        - namereplace - memasukkan sebuah `\N{...}` escape sequence alih-alih unicode yang tidak dapat dikodekan
+
+- Contoh
+
+1. Encode menggunakan default Utf-8 Encoding
+
+    ```python
+    # unicode string
+    string = "pythön!"
+
+    # print string
+    print("Stringnya adalah:", string)
+
+    # default encoding to utf-8
+    string_utf = string.encode()
+
+    # print result
+    print("Versi encodednya adalah:", string_utf)
+    ```
+
+    ***Output:***
+    ```text
+    Stringnya adalah: pythön!
+    Versi encodednya adalah: b'pyth\xc3\xb6n!'
+    ```
+
+2. Encoding dengan parameter error
+
+    ```python
+    # unicode string
+    string = "pythön!"
+
+    # print string
+    print("Stringnya adalah:", string)
+
+    # ignore error
+    print("Versi encodednya (dengan ignore) adalah:", string.encode("ascii", "ignore"))
+
+    # replace error
+    print("Versi encodednya (dengan replace) adalah:", string.encode("ascii", "replace"))
+    ```
+
+    ***Output:***
+    ```text
+    Stringnya adalah: pythön!
+    Versi encodednya (dengan ignore) adalah: b'pythn!'
+    Versi encodednya (dengan replace) adalah: b'pyth?n!'
+    ```
+
+
+- Tambahan
+    > Sejak python 3.0, string disimpan sebagai Unicode, yaitu setiap karakter pada string direpresentasikan dengan 
+    > sebuah code point. Jadi, setiap string hanya merupakan sebuah urutan dari Unicode code points.
+
+    > Untuk efisiensi penyimpanan dari string, urutan-urutan dari code points itu dikonversi ke sebuah set dari bytes. 
+    > Proses ini dikenal dengan `encoding.`
+
+    > Ada berbagai _encoding_ yang ada yang memperlakukan string secara berbeda.
+    > _encoding_ yang populer adalah _utf-8_, _ascii_, dan lain-lain.
