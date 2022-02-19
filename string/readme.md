@@ -4,7 +4,7 @@
 - [x] capitalize
 - [ ] casefold
 - [x] center
-- [ ] count
+- [x] count
 - [ ] encode
 - [ ] endswith
 - [ ] expandtabs
@@ -111,7 +111,7 @@
 - Parameters\
   `center()` membutuhkan dua argument:
   - **width** - panjang string dengan karakter yang digabungkan
-  - **fillchar** (Opsional) - karakter yang digabungkan\
+  - **fillchar (Opsional)** - karakter yang digabungkan\
     
   `fillchar` argument bersifat opsional. Apabila tidak ditentukan maka akan diisi
   dengan `spasi` sebagai argument bawaan (default)
@@ -143,4 +143,66 @@
    ***Output:***
     ```text
     Centered string: ~~~python itu istimewa~~~~
+    ```
+
+**4. Count**
+
+- Definisi
+> `count` method ini mengembalikan jumlah kemunculan substring
+> dalam string yang diberikan
+
+- Syntax
+
+    ```python
+    string.count(substring, count=..., end=...)
+
+    ```
+
+- Parameters
+
+    `count` method hanya memerlukan satu parameter untuk dieksekusi, tapi method ini\
+    juga memiliki dua parameter opsional:
+
+    * **substring** - string yang akan ditemukan & dihitung
+    * **start (Opsional)** - indeks awal dalam string dimana pencariannya dimulai
+    * **end (Opsional)** - indeks akhir dalam string dimana pencariannya berakhir
+
+    > Note: Index pada python dimulai dari 0, bukan 1
+
+- Return value\
+    `count` method mengembalikan jumlah kemunculan substring dalam string yang diberikan
+
+- Contoh:
+1. Menghitung jumlah kemunculan substring dari string
+
+    ```python
+    string = "Python itu mudah, bukan?"
+    substring = "u"
+
+    count = string.count(substring)
+
+    # print jumlah
+    print("Jumlah huruf u:", count)
+    ```
+    
+    ***Output:***
+    ```text
+    Jumlah huruf u: 3
+    ```
+
+2. Menghitung jumlah kemunculan substring dari string menggunakan `start` dan `end`
+
+    ```python
+    string = "Python itu mudah, bukan?"
+    substring = "u"
+
+
+    count = string.count(substring, 12, 18)
+
+    print("Jumlah huruf u:", count)
+    ```
+
+    ***Output:***
+    ```text
+    Jumlah huruf u: 1
     ```
