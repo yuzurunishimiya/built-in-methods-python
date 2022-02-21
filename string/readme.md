@@ -6,7 +6,7 @@
 - [x] center
 - [x] count
 - [x] encode
-- [ ] endswith
+- [x] endswith
 - [ ] expandtabs
 - [ ] find
 - [ ] format
@@ -292,3 +292,111 @@
 
     > Ada berbagai _encoding_ yang ada yang memperlakukan string secara berbeda.
     > _encoding_ yang populer adalah _utf-8_, _ascii_, dan lain-lain.
+
+
+**6. endswith**
+
+- Definisi
+> `endswith` method akan mengembalikan `True` jika sebuah string berakhiran dengan akhiran yang spesifik.
+> Jika tidak, maka akan mengembalikan nilai `False`
+
+- Syntax
+
+    ```python
+    string.endswith(suffix, start, end)
+    ```
+
+- Parameters\
+    `endswith()` method mengambil tiga parameter
+    * **suffix** - String atau tuple dari akhiran yang akan dicek
+    * **start (Opsional)** - Posisi awal dimana akhiran akan dicek di dalam string
+    * **end (Opsional)** - Posisi akhir dimana akhiran akan dicek di dalam string
+
+- Return value\
+    method ini hanya akan mengembalikkan sebuah boolean (*True* atau *False*)
+    * return `True` apabila sebuah string berakhir dengan spesifik akhiran
+    * return `False` apabila sebuah string tidak berakhir dengan spesifik akhiran
+
+- Contoh:
+
+1. Menggunakan method `endswith` tanpa `start` dan `end` parameter
+
+    ```python
+    text = "Pyhton itu sangat mudah dipelajari."
+
+    result = text.endswith("dipelajari")
+    print(result)
+
+    result = text.endswith("dipelajari.")
+    print(result)
+
+    result = text.endswith("Python itu sangat mudah dipelajari.")
+    print(result)
+    ```
+    ***Output:***
+    ```text
+    False
+    True
+    True
+    ```
+
+2. Menggunakan method `endswith` dengan `start` dan `end` parameter
+
+    ```python
+    text = "Python itu sangat mudah dipelajari."
+
+    # start param: 11
+    # "sangat mudah dipelajari." string yang dicari
+    result = text.endswith("dipelajari.", 11)
+    print(result)
+
+    # start & end dipakai
+    # start: 11 dan end: 23
+    # "sangat mudah" string yang dicari
+    result = text.endswith("sangat", 11, 23)
+    # return False
+    print(result)
+
+    result = text.endswith("mudah", 11, 23)
+    # return True
+    print(result)
+    ```
+
+    ***Output:***
+    ```text
+    True
+    False
+    True
+    ```
+
+3. Menggunakan tuple untuk `endswith`
+
+    Sangat mungkin untuk menggunakan sebuah tuple sebagai nilai *suffix* pada parameter `endswith`.\
+    Jika string yang dicari berakhiran dengan nilai tuple apapun, maka `endswith` akan mengembalikan nilai `True`.
+    Jika tidak, maka method ini akan mengembalikan nilai `False`.
+
+    contoh:
+    ```python
+    text = "Python itu sangat mudah"
+
+    result = text.endswith(("Python", "sangat"))
+    # return False
+    print(result)
+
+    result = text.endswith(("Python", "mudah", "go"))
+    # return True
+    print(result)
+
+    # dengan start dan end
+    # "Python itu" string yang dicari
+    result = text.endswith(("itu", "py"), 0, 10)
+    # return True
+    print(result)
+    ```
+
+    ***Output:***
+    ```text
+    False
+    True
+    True
+    ```
