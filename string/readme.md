@@ -1,12 +1,12 @@
 ## Built-in methods String
 
 ### Semua list methods pada string
-- [x] capitalize
-- [ ] casefold
-- [x] center
-- [x] count
-- [x] encode
-- [x] endswith
+- [x] [capitalize](#1-capitalize)
+- [ ] [casefold](#2-casefold)
+- [x] [center](#3-center)
+- [x] [count](#4-count)
+- [x] [encode](#5-encode)
+- [x] [endswith](#6-endswith)
 - [ ] expandtabs
 - [ ] find
 - [ ] format
@@ -46,7 +46,7 @@
 - [ ] upper
 - [ ] zfill
 
-**1. capitalize**
+### 1. capitalize
 
 - Definisi
   > Pada python, method capitalize mengubah karakter pertama pada sebuah string menjadi
@@ -95,9 +95,9 @@
 
 
 
-**2. casefold**
+### 2. casefold
 
-**3. center**
+### 3. center
 
 - Definisi:
   > `center` method me-return sebuah string yang diisi dengan karakter 
@@ -145,7 +145,7 @@
     Centered string: ~~~python itu istimewa~~~~
     ```
 
-**4. count**
+### 4. count
 
 - Definisi
 > `count` method ini mengembalikan jumlah kemunculan substring
@@ -207,7 +207,7 @@
     Jumlah huruf u: 1
     ```
 
-**5. encode**
+### 5. encode
 
 - Definisi
 
@@ -294,7 +294,7 @@
     > _encoding_ yang populer adalah _utf-8_, _ascii_, dan lain-lain.
 
 
-**6. endswith**
+### 6. endswith
 
 - Definisi
 > `endswith` method akan mengembalikan `True` jika sebuah string berakhiran dengan akhiran yang spesifik.
