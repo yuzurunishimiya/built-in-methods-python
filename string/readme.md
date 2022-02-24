@@ -7,8 +7,8 @@
 - [x] [count](#4-count)
 - [x] [encode](#5-encode)
 - [x] [endswith](#6-endswith)
-- [ ] expandtabs
-- [ ] find
+- [ ] [expandtabs](#7-expandtabs)
+- [ ] [find](#8-find)
 - [ ] format
 - [ ] format_map
 - [ ] index
@@ -400,3 +400,31 @@
     True
     True
     ```
+
+### 7. expandtabs
+
+
+### 8. find
+
+- Definisi
+> method `find()` akan mengembalikkan nilai index pertama dari kemunculan substring (jika ditemukan).
+> Jika tidak, maka ia akan mengembalikkan nilai -1
+
+- Syntax
+
+    ```python
+    string.find(sub, start, end)
+    ```
+
+- Parameters\
+    method `find()` dapat menggunakan maksimal tiga parameter, yaitu:
+    * **sub** - Substring yang akan dicari pada string
+    * **start & end** - Rentang string[start:end] dimana substring dicari.
+
+- Return value\
+    Method ini akan mengembalikkan sebuah nilai ***integer***:
+    * Jika substring didapati didalam string, maka method ini akan mengembalikkan nilai index dari kemunculan substring
+    * Jika substring tidak didapati didalam string, maka akan mengembalikkan nilai -1
+
+- Contoh\
+    ...
