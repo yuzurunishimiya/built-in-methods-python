@@ -8,7 +8,7 @@
 - [x] [encode](#5-encode)
 - [x] [endswith](#6-endswith)
 - [ ] [expandtabs](#7-expandtabs)
-- [ ] [find](#8-find)
+- [x] [find](#8-find)
 - [ ] format
 - [ ] format_map
 - [ ] index
@@ -426,5 +426,57 @@
     * Jika substring didapati didalam string, maka method ini akan mengembalikkan nilai index dari kemunculan substring
     * Jika substring tidak didapati didalam string, maka akan mengembalikkan nilai -1
 
-- Contoh\
-    ...
+- Contoh
+
+1. `find()` tanpa `start` dan `end` argumen
+
+    ```python
+    quote = "sudahi saja, sudahi saja, cukup sudahi saja"
+
+    # kedapatan pertama kata `saja`
+    result = quote.find("saja")
+    print("Substring 'saja':", result)
+
+    # megembalikkan nilai -1 jika substring tidak ditemukkan
+    result = quote.find("semua")
+    print("Substring 'semua':", result)
+
+    # cara menggunakan find()
+    if (quote.find("cukup") != -1):
+        print("terdapat substring 'cukup' pada quote")
+    else:
+        print("tidak terdapat substring 'cukup'")
+    ```
+
+    ***Output:***
+    ```text
+    Substring 'saja': 7
+    Substring 'semua': -1
+    terdapat substring 'cukup' pada quote
+    ```
+
+2. `find()` dengan argumen `start` dan `end`
+
+    ```python
+    quote = "Lakukanlah hal-hal kecil dengan cinta yang besar"
+
+    # substring dicari pada kalimat 'hal kecil dengan cinta yang besar'
+    print(quote.find("hal-hal", 15))
+
+    # substring dicari pada kalimat ' hal-hal kecil dengan cinta yang besar'
+    print(quote.find("hal kecil", 10))
+
+    # substring dicari pada kalimat ' hal-hal kecil '
+    print(quote.find("cinta", 10, 25))
+
+    # substring dicari pada kalimat 'hal-hal kecil dengan cinta'
+    print(quote.find("hal", 11, 37))
+    ```
+
+    ***Output:***
+    ```text
+    -1
+    15
+    -1
+    11
+    ```
