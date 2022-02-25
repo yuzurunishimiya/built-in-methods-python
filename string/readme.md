@@ -111,7 +111,7 @@
 - Parameters\
   `center()` membutuhkan dua argument:
   - **width** - panjang string dengan karakter yang digabungkan
-  - **fillchar (Opsional)** - karakter yang digabungkan\
+  - **fillchar (Opsional)** - karakter yang digabungkan
     
   `fillchar` argument bersifat opsional. Apabila tidak ditentukan maka akan diisi
   dengan `spasi` sebagai argument bawaan (default)
